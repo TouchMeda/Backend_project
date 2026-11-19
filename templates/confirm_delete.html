@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>Delete «{{ object }}»?</h1>
+
+  <p>This action is irreversible. Related records (such as server incidents) will also be deleted.</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete</button>
+    <a href="javascript:history.back()">Cancel</a>
+  </form>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %}Inventory{% endblock %}</title>
+
+  <style>
+    body { font-family: sans-serif; max-width: 960px; margin: 0 auto; padding: 1rem; }
+    nav { display: flex; gap: 1rem; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid #ccc; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+    .errorlist { color: #b00020; }
+  </style>
+
+
+</head>
+
+
+<body>
+
+  <nav>
+
+    <a href="{% url 'server_list' %}">Servers</a>
+    {% if user.is_authenticated %}
+      <span>You are logged in as <b>{{ user.username }}</b></span>
+      <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+      </form>
+    {% else %}
+      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'register' %}">Registration</a>
+    {% endif %}
+
+  </nav>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+</body>
+
+
+</html>
