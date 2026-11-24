@@ -2,7 +2,7 @@ Tracking of servers and incidents. Django, SQLite.
 
 how to launch
 
-​```
+​
 bash
 git clone git@github.com:YOUR_LOGIN/django-inventory.git
 cd Backend_project
@@ -11,4 +11,4 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
-​```
+​
