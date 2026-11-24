@@ -2,7 +2,8 @@ Tracking of servers and incidents. Django, SQLite.
 
 how to launch
 
-​```bash
+​```
+bash
 git clone git@github.com:YOUR_LOGIN/django-inventory.git
 cd Backend_project
 python3 -m venv venv && source venv/bin/activate
